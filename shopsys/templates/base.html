@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        {% if page_title %}{{ page_title }} - {% endif %}{{site_name}}
+        {% endblock %}
+    </title>
+    <meta name="keywords" content="{{ meta_keywords}}">
+    <meta name="description" content="{{ meta_description }}">
+</head>
+<body>
+
+<h2>
+<a href="/">kakago</a>
+{% for c in active_categories %}
+<a href="{{c.get_absolute_url}}">{{c.name}}</a>
+{% endfor %}
+</h2>
+
+
+{% block body %}{% endblock %}
+
+</body>
+</html>

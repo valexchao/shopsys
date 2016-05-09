@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>{{c.name}}</h1>
+{% for p in products %}
+<a href="{{p.get_absolute_url}}">
+    <img src="{{ MEDIA_URL}}{{p.image }}" alt="{{p.nam}}" width="140" height="140">{{p.name}}
+</a>
+{% endfor %}
+{% endblock %}
